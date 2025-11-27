@@ -1,10 +1,30 @@
+
+
+
 <html>
-<head><title> Welcome </title></head>
+<head><title> Student Registration </title></head>
 <body>
- <form action="welcome.php" method="POST">
-Name: <input type="text" name="fname"> <br/> <br/>
-Age : <input type="text" name="age"> <br/> <br/>
-<input type="Submit" name="Submit" value="click">
+<form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+Student Index NO:<input type="text" name="id"><br>
+Student Name:    <input type="text" name="fname"><br>
+Student Email:   <input type="text" name="mail"><br>
+<input type="submit" name="submit" value="Submit">
 </form>
 </body>
 </html>
+
+<?php
+
+if (isset($_POST['submit'])) {
+
+    $id = $_POST['id'];
+    $fname = $_POST['fname'];
+    $mail = $_POST['mail'];
+
+    echo "ID: $id <br>";
+    echo "Name: $fname <br>";
+    echo "Email: $mail <br>";
+}
+
+?>
+
